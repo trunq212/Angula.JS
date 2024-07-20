@@ -1,0 +1,29 @@
+.color-item {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+  }
+  .content_pro{
+    margin-top: 10px;
+    display: flex;
+  }
+  .carousel-inner img {
+    width: 90%;
+    margin: auto;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    color: black;
+  }
+  
+  .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 15.354a.5.5 0 0 1-.708 0l-7-7a.5.5 0 0 1 0-.708l7-7a.5.5 0 1 1 .708.708L4.707 8l6.647 6.646a.5.5 0 0 1 0 .708z'/%3E%3C/svg%3E");
+  }
+  
+  .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 15.354a.5.5 0 0 1 0-.708L11.293 8 4.646 1.354a.5.5 0 1 1 .708-.708l7 7a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0z'/%3E%3C/svg%3E");
+  }
+  

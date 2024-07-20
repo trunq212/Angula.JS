@@ -1,0 +1,39 @@
+<button type="button" class="btn btn-success">
+    <a routerLink="/students/add" routerLinkActive="active" style="color: white; text-decoration: none;">Thêm sản phẩm</a>
+  </button>
+  <div style="padding: 20px;">
+    <table class="table table-bordered ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Mã Số Sinh Viên</th>
+          <th scope="col">Tên</th>
+          <th scope="col">thời gian chiếu</th>
+          <th scope="col">Ảnh</th>
+          <th scope="col">Lớp</th>
+          <th scope="col">Ngôn Ngữ</th>
+          <th scope="col">Chỉnh sửa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.MSSV }}</td>
+          <td>{{ student.lastName }}{{ student.firstName }}</td>
+          <td>{{ student.dob }}</td>
+          <td><img style="width: 100px; height: auto;" src="{{student.imageUrlChinh}}" alt=""></td>
+          <td>{{student.classCode}}</td>
+          <td>
+            <ul>
+              <li *ngFor="let pro of student.programmingLanguages">{{ pro }}</li>
+            </ul>
+          </td>
+          <td>
+            <button type="button" class="btn btn-success">
+              <a routerLink="/students/edit" routerLinkActive="active"
+                style="color: white; text-decoration: none;">Sửa</a>
+            </button>
+            <button type="button" class="btn btn-danger">Xóa</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

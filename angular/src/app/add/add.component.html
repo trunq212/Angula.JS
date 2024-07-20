@@ -1,0 +1,55 @@
+<div style="width: 70%; margin: auto; margin-top: 30px">
+    <div class="Them-lhh">
+      <h2>Thêm mới sản phẩm</h2>
+    </div>
+    <div class="formcontent">
+      <form (ngSubmit)="addStudent()">
+        <div class="row">
+          Ma số sinh viên <br />
+          <input type="text" id="MSSV" required [(ngModel)]="student.MSSV" name="MSSV" placeholder=""
+            required>
+        </div>
+        <div class="row">
+          Tên<br />
+          <input type="text" id="firstName" required [(ngModel)]="student.firstName" name="firstName" placeholder=""
+            required>
+        </div>
+        <div class="row">
+          Họ <br />
+          <input type="text" id="lastName" required [(ngModel)]="student.lastName" name="lastName" placeholder=""
+            required>
+        </div>
+        <div class="row">
+          ngày sinh <br />
+          <input type="text" id="dob" required [(ngModel)]="student.dob" name="dob" placeholder=""
+            required>
+        </div>
+        <div class="row">
+          Lớp học<br />
+          <input type="test" id="classCode" required [(ngModel)]="student.classCode" name="classCode"
+            placeholder="" required>
+        </div>
+        <div class="row">
+          Hình sản phẩm <br />
+          <input type="text" id="imageUrlChinh" required [(ngModel)]="student.imageUrlChinh" name="imageUrlChinh"
+            placeholder="Đường dẫn hình ảnh chính" required>
+        </div>
+        <div class="row">
+          Hình sản phẩm phụ <br />
+          <textarea id="imageUrlPhu" required [(ngModel)]="student.imageUrlPhu" name="imageUrlPhu"
+            placeholder="Đường dẫn hình ảnh phụ (mỗi ảnh trên 1 dòng)" required></textarea>
+        </div>
+        <div class="row">
+          Ngô ngữ lập trình
+          <textarea id="programmingLanguages" required [(ngModel)]="student.programmingLanguages"
+            name="programmingLanguages" placeholder="" required></textarea>
+        </div>
+  
+        <div class="mb10">
+          <button class="btn btn-danger" [disabled]="!addStudent" type="submit">Thêm mới</button> &#160;
+          <button type="button" class="btn btn-danger"><a routerLink="/students/list" routerLinkActive="active"
+              style="color: white; text-decoration: none;">Danh sách sản phẩm</a></button>
+        </div>
+      </form>
+    </div>
+  </div>

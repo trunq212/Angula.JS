@@ -1,0 +1,69 @@
+<section class="py-5" *ngIf="student">
+    <div class="container">
+      <div class="row gx-5">
+        <aside class="col-lg-6">
+          <div class="border rounded-4 mb-3 d-flex justify-content-center">
+            <div style="width: 80%; padding: 20px;">
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div *ngFor="let imgphu of student.imageUrlPhu; let j = index" class="carousel-item"
+                    [ngClass]="{'active': j === 0}">
+                    <img [src]="imgphu" class="d-block" alt="color{{j+1}}">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center mb-3">
+            <a *ngFor="let imgphu of student.imageUrlPhu" class="border mx-2 rounded-2" target="_blank" data-type="image"
+              class="item-thumb">
+              <img width="60" height="60" class="rounded-2" [src]="imgphu" />
+            </a>
+          </div>
+          <!-- thumbs-wrap.// -->
+          <!-- gallery-wrap .end// -->
+        </aside>
+        <main class="col-lg-6">
+          <div class="ps-lg-3">
+            <h4 class="title text-dark">
+            </h4>
+            <div class="mb-3">
+              <span class="h5">{{student.lastName}} {{student.firstName}} </span>
+              <span class="text-muted"></span>
+            </div>
+  
+            <div class="content_pro">
+              <dt class="col-3">Ngày sinh</dt>
+              <div class="d-flex">
+                <dd class="col-9">{{student.dob}}</dd>
+              </div>
+            </div>
+  
+            <div class="content_pro">
+              <dt class="col-3">Lớp học </dt>
+              <div class="d-flex">
+                <dd class="col-9">{{student.classCode}}</dd>
+              </div>
+            </div>
+            <div class="row">
+              <div class="content_pro">
+                <dt class="col-3">Ngô ngữ lập trình </dt>
+                <dd *ngFor="let pr of student.programmingLanguages ">{{pr}}</dd>
+              </div>
+            </div>
+            <hr />
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>

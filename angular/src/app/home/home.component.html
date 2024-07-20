@@ -1,0 +1,39 @@
+<div class="row">
+  <div *ngFor="let student of students; let i = index" class="from_pro" style="width: 22rem;">
+      <div class="card">
+        <div [attr.id]="'carouselExampleControls' + i" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" style="width: 22rem;">
+            <div *ngFor="let imgphu of student.imageUrlPhu; let j = index" class="carousel-item" [ngClass]="{'active': j === 0}">
+              <img [src]="imgphu" class="d-block" alt="color{{j+1}}">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleControls' + i" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleControls' + i" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="form_price">
+            <div class="priceNew" [routerLink]="['/detail', student._id]" routerLinkActive="active">{{ student.lastName }} {{ student.firstName }}</div>
+            <div class="">{{student.MSSV}}</div>
+          </div>
+          <div class="name_pro">
+            <div class="">{{student.dob}}</div>
+          </div>
+          <div class="">
+            {{student.classCode}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add the required Bootstrap and jQuery scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
